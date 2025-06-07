@@ -1,5 +1,6 @@
 import sys
 import logging
+from src.logger import logging  # Importing the logging configuration from logger module for consistent logging setup and to use the same logging format and file path
 
 def error_message_detail(error, error_detail: sys):   # Function to extract detailed error message
     _, _, exc_tb = error_detail.exc_info()           # Extracting the traceback information

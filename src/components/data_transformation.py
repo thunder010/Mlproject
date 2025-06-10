@@ -108,14 +108,14 @@ class DataTransformation:         # This class is responsible for transforming t
 
             save_object(                       # This function is used to save the preprocessor object to a file so that it can be reused later without having to retrain the preprocessing steps.
 
-                file_path=self.data_transformation_config.preprocessor_obj_file_path,
+                file_path=self.data_transformation_config.preprocessor_obj_file_path,  # This is the path where the preprocessor object will be saved.
                 obj=preprocessing_obj
 
             )
 
             return (
-                train_arr,
-                test_arr,
+                train_arr,       # This returns the transformed training data along with the path to the preprocessor object file.
+                test_arr,        # This returns the transformed test data along with the path to the preprocessor object file.
                 self.data_transformation_config.preprocessor_obj_file_path,   # This returns the transformed training and test data along with the path to the preprocessor object file.
             )
         except Exception as e:

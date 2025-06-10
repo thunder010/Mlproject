@@ -52,3 +52,9 @@ class DataIngestion:                  # This class is responsible for ingesting 
 if __name__=="__main__":               # This block is executed when the script is run directly and not when it is imported as a module.
     obj=DataIngestion()              # This creates an instance of the DataIngestion class.
     train_data,test_data=obj.initiate_data_ingestion()    # This calls the initiate_data_ingestion method to perform the data ingestion process.
+
+    data_transformation=DataTransformation()        # This creates an instance of the DataTransformation class, which is responsible for transforming the data.
+    train_arr,test_arr,_=data_transformation.initiate_data_transformation(train_data,test_data)  # it calls the initiate_data_transformation method to transform the training and test data.
+
+    modeltrainer=ModelTrainer()      # This creates an instance of the ModelTrainer class.
+    print(modeltrainer.initiate_model_trainer(train_arr,test_arr))     # it calls the initiate_model_trainer method to train the model using the transformed training and test data.

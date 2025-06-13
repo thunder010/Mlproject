@@ -7,5 +7,6 @@ catboost
 xgboost
 dill
 Flask
+gunicorn
 #-e .   # -e . indicates that there is a setup.py file in the current directory and it is mapped to the setup.py file
 

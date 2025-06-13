@@ -7,15 +7,13 @@ from src.pipeline.predict_pipeline import CustomData,PredictPipeline
 
 application = Flask(__name__)     # it will basically create a Flask application instance which will give us an entry point to our application
 
-app=application            # we will assign the Flask application instance to a variable called app
-
 ## Route for the home page
 
-@app.route('/')
+@application.route('/')
 def index():
     return render_template('index.html')
 
-@app.route('/predictdata', methods=['GET', 'POST'])
+@application.route('/predictdata', methods=['GET', 'POST'])
 def predict_datapoint():
     if request.method=='GET':
         return render_template('home.html')
